@@ -1,34 +1,28 @@
 {
-    "posts": [
-        {
-            "id": 1,
-            "Title": "React 101",
-            "Subhead": "Some basics to get you started with React",
-            "Body": "React apps are build using components. These components are used to give you flexibility when writing code."
-        },
-        {
-            "id": 2,
-            "Title": "Using JSX",
-            "Subhead": "JSX basics",
-            "Body": "When writing your markup in react, you write it in JSX. This is very similar to HTML, but with some key differences. One difference to keep in mind is that JSX things expect a prop of className rather than class."
-        },
-        {
-            "id": 3,
-            "Title": "Someone",
-            "Subhead": 10,
-            "Body": "There are a lot of things to talk about dealing with react."
-        },
-        {
-            "id": 4,
-            "Title": "Someone",
-            "Subhead": 10,
-            "Body": "There are a lot of things to talk about dealing with react."
-        },
-        {
-            "id": 5,
-            "Title": "Someone",
-            "Subhead": 10,
-            "Body": "There are a lot of things to talk about dealing with react."
-        }
-    ]
+  "posts": [
+    {
+      "id": 1,
+      "title": "React 101",
+      "subhead": "Some basics to get you started with React",
+      "body": "React apps are build using components. These components are used to give you flexibility when writing code."
+    },
+    {
+      "id": 2,
+      "title": "Using JSX",
+      "subhead": "JSX basics",
+      "body": "When writing your markup in react, you write it in JSX. This is very similar to HTML, but with some key differences. One difference to keep in mind is that JSX things expect a prop of className rather than class."
+    },
+    {
+      "title": "Test post",
+      "subhead": "this is a test post ",
+      "body": "Testing testing 1 2 3",
+      "id": 3
+    },
+    {
+      "title": "Hey Miguel",
+      "subhead": "Miguel",
+      "body": "pollito",
+      "id": 4
+    }
+  ]
 }

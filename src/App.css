@@ -36,3 +36,29 @@
     transform: rotate(360deg);
   }
 }
+
+.logo {
+  height: 7rem;
+}
+
+.title {
+  height: 15rem;
+  padding-bottom: 4rem;
+}
+
+/* .home-button {
+  margin-left: -10rem;
+} */
+
+.body-input{
+  resize: both;
+}
+
+.about {
+  margin: 1rem 9rem;
+  padding: 1rem;
+  text-align: left;
+  background: #ebebeb;
+}
+
+/* color of logo is #0180e7 */

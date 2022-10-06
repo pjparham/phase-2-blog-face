@@ -24,6 +24,21 @@ function App() {
     setPosts([...posts, newPost])
   }
 
+  function handleUpdatePost(updatedPost){
+    const updatedPosts = posts.map((post) => {
+      if (post.id === updatedPost.id) {
+        return updatedPost
+      } else {return post}
+    });
+    setPosts(updatedPosts)
+  }
+
+  function handleDeletePost(deletedPost){
+    const updatedPosts = posts.filter((post) => post.id !== deletedPost.id);
+    setPosts(updatedPosts)
+  }
+
+
   if (user === undefined){
     return (
       <div className="App">
@@ -39,8 +54,8 @@ function App() {
     <div className="App">
       <NavBar setUser={setUser}/>
       <Routes>
-        <Route path='/' exact element={<BlogPosts posts={posts}/>} />
-        <Route path='/profile' exact element={<Profile posts={posts} user={user}/>} />
+        <Route path='/' exact element={<BlogPosts handleDeletePost={handleDeletePost} handleUpdatePost={handleUpdatePost} user={user} posts={posts}/>} />
+        <Route path='/profile' exact element={<Profile handleDeletePost={handleDeletePost} handleUpdatePost={handleUpdatePost} posts={posts} user={user}/>} />
         <Route path='/new-post' element={<CreatePost user={user} handleAddPost={handleAddPost}/>} />
         <Route path='/about' exact element={<About/>} />
       </Routes>

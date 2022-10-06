@@ -1,37 +1,32 @@
 import React, { useState } from 'react'
 
-function CreatePost({ handleAddPost, user }) {
-    const [title, setTitle] = useState("")
-    const [subtitle, setSubtitle] = useState("")
-    const [body, setBody] = useState("")
+function EditPost({  user, post, handleUpdatePost, setEdit }) {
+    const [title, setTitle] = useState(post.title)
+    const [subtitle, setSubtitle] = useState(post.subhead)
+    const [body, setBody] = useState(post.body)
 
-   function handleSubmit(e){
+    function handleSubmit(e){
         e.preventDefault();
-        const newPost = {
+        const updatedPost = {
             "title": title,
             "subhead": subtitle,
             "body": body,
-            "user": user.sub,
-            "userName": (user.given_name + " " + user.family_name)
         }
-        console.log(newPost)
-        fetch('http://localhost:3004/posts', {
-            method: "POST",
+        fetch(`http://localhost:3004/posts/${post.id}`, {
+            method: "PATCH",
             headers: {
-                "Content-Type": "application/json"
+                "Content-Type": "application/json",
             },
-            body: JSON.stringify(newPost)
+            body: JSON.stringify(updatedPost)
         })
         .then((r) => r.json())
-        .then((newPost) => handleAddPost(newPost))
-        setTitle("")
-        setSubtitle("")
-        setBody("")
-        alert('Your post was submitted. Check out the home page to see it!')
-   }
+        .then((updatedPost) => handleUpdatePost(updatedPost))
+        setEdit(false)
+    }
+
   return (
     <div>
-        <h1>New Post:</h1>
+        <h1>Edit Post:</h1>
         <form onSubmit={handleSubmit}>
             <label for="title">Title</label><br></br>
             <input value={title} onChange={(e)=>setTitle(e.target.value)} type="text" id="title" name="title"></input><br></br>
@@ -45,4 +40,4 @@ function CreatePost({ handleAddPost, user }) {
   )
 }
 
-export default CreatePost
+export default EditPost

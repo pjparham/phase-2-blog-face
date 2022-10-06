@@ -1,7 +1,7 @@
 import React from 'react';
 import BlogPosts from '../BlogPosts';
 
-function Profile({ user, posts }) {
+function Profile({ user, posts, handleUpdatePost, handleDeletePost }) {
 
     const userPosts = posts.filter((post) => post.user === user.sub)
     console.log(userPosts, "userPosts")
@@ -11,7 +11,7 @@ function Profile({ user, posts }) {
       <h1>{user.given_name + " " + user.family_name}</h1>
       <div>
         <h1>My Posts</h1>
-        <BlogPosts posts={userPosts} />
+        <BlogPosts handleDeletePost={handleDeletePost} handleUpdatePost={handleUpdatePost} user={user} posts={userPosts} />
       </div>
     </>
   )

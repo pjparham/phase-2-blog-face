@@ -6,7 +6,34 @@
       "subhead": "Some basics to get you started with React",
       "body": "React apps are build using components. These components are used to give you flexibility when writing code.",
       "user": "test",
-      "userName": ""
+      "userName": "",
+      "comments": [
+        {
+          "id": 1,
+          "text": "this is really good",
+          "username": "John Doe"
+        },
+        {
+          "id": 2,
+          "text": "very helpful!",
+          "username": "John Doe"
+        },
+        {
+          "text": "Amazing",
+          "id": 3,
+          "username": "Parker Parham"
+        },
+        {
+          "text": "Testing testing",
+          "id": 4,
+          "username": "Parker Parham"
+        },
+        {
+          "text": "123",
+          "id": 5,
+          "username": "Parker Parham"
+        }
+      ]
     },
     {
       "id": 2,
@@ -14,7 +41,24 @@
       "subhead": "JSX basics",
       "user": "test",
       "body": "When writing your markup in react, you write it in JSX. This is very similar to HTML, but with some key differences. One difference to keep in mind is that JSX things expect a prop of className rather than class.",
-      "userName": ""
+      "userName": "",
+      "comments": [
+        {
+          "id": 1,
+          "text": "this is really good",
+          "username": "John Doe"
+        },
+        {
+          "id": 2,
+          "text": "very helpful!",
+          "username": "John Doe"
+        },
+        {
+          "text": "so good!",
+          "id": 3,
+          "username": "Parker Parham"
+        }
+      ]
     },
     {
       "title": "Test post",
@@ -22,7 +66,34 @@
       "user": "test",
       "body": "Testing testing 1 2 3",
       "id": 3,
-      "userName": ""
+      "userName": "",
+      "comments": [
+        {
+          "id": 1,
+          "text": "this is really good",
+          "username": "John Doe"
+        },
+        {
+          "id": 2,
+          "text": "very helpful!",
+          "username": "John Doe"
+        },
+        {
+          "text": "so good",
+          "id": 3,
+          "username": "Parker Parham"
+        },
+        {
+          "text": "wow!",
+          "id": 4,
+          "username": "Parker Parham"
+        },
+        {
+          "text": "yes it's working",
+          "id": 5,
+          "username": "Parker Parham"
+        }
+      ]
     },
     {
       "title": "Hey Miguel",
@@ -30,7 +101,34 @@
       "user": "test",
       "body": "pollito",
       "id": 4,
-      "userName": ""
+      "userName": "",
+      "comments": [
+        {
+          "id": 1,
+          "text": "this is really good",
+          "username": "John Doe"
+        },
+        {
+          "id": 2,
+          "text": "very helpful!",
+          "username": "John Doe"
+        },
+        {
+          "text": "yesss",
+          "id": 3,
+          "username": "Parker Parham"
+        },
+        {
+          "text": "slay",
+          "id": 4,
+          "username": "Parker Parham"
+        },
+        {
+          "text": "jkkj",
+          "id": 5,
+          "username": "Parker Parham"
+        }
+      ]
     },
     {
       "title": "Today is a great day",
@@ -38,7 +136,19 @@
       "body": "Be grateful in all things that you do. It is important to stay grateful always and be thankful for the blessings you do have. If you are able to sleep in a bed, go without hunger, and walk on both feet, you have abundance in your life that deserves gratitude.",
       "user": "google-oauth2|108105217762258962502",
       "id": 6,
-      "userName": "Parker Parham"
+      "userName": "Parker Parham",
+      "comments": [
+        {
+          "id": 1,
+          "text": "this is really good",
+          "username": "John Doe"
+        },
+        {
+          "id": 2,
+          "text": "very helpful!",
+          "username": "John Doe"
+        }
+      ]
     }
   ]
 }

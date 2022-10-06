@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { PostContainer, Title, EditButton, UserName, TitleContainer, ButtonContainer } from "./PostDetailsElements";
 import EditPost from "../EditPost";
+import Comments from '../Comments';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrash } from '@fortawesome/free-solid-svg-icons'
 
@@ -27,30 +28,33 @@ function PostDetails({ user, handleDeletePost, handleUpdatePost }) {
         fetch(`http://localhost:3004/posts/${params.id}`)
         .then((r) => r.json())
         .then((postData) => setPost(postData))
-    })
+    }, [])
 
-    console.log(post, 'post details')
     if (!post) return <h2>Loading...</h2>
     return (
-        <PostContainer>
-            <TitleContainer>
-     
-             <Title>{post.title}</Title>
-             {post.userName ? <UserName>By: {post.userName}</UserName> : null}
-             {post.user === user.sub ? (<ButtonContainer>
-                                            <EditButton onClick={handleDeleteClick}>
-                                                <FontAwesomeIcon icon={faTrash} /> 
-                                            </EditButton>
-                                            <EditButton onClick={handleEditClick}>
-                                                Edit
-                                            </EditButton>
-                                        </ButtonContainer>) : null}
-            </TitleContainer>
-            <h4>{post.subhead}</h4>
+        <>
+            <PostContainer>
+                <TitleContainer>
         
-            <p>{post.body}</p>
-            { edit ? <EditPost setEdit={setEdit} handleUpdatePost={handleUpdatePost} post={post} /> : null}
-        </PostContainer>
+                <Title>{post.title}</Title>
+                {post.userName ? <UserName>By: {post.userName}</UserName> : null}
+                {post.user === user.sub ? (<ButtonContainer>
+                                                <EditButton onClick={handleDeleteClick}>
+                                                    <FontAwesomeIcon icon={faTrash} /> 
+                                                </EditButton>
+                                                <EditButton onClick={handleEditClick}>
+                                                    Edit
+                                                </EditButton>
+                                            </ButtonContainer>) : null}
+                </TitleContainer>
+                <h4>{post.subhead}</h4>
+            
+                <p>{post.body}</p>
+                { edit ? <EditPost setEdit={setEdit} handleUpdatePost={handleUpdatePost} post={post} /> : null}
+            </PostContainer>
+            <Comments user={user} post={post}/>
+
+        </>
     )
 }
 

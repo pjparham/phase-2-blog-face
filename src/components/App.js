@@ -25,6 +25,7 @@ function App() {
     setPosts([...posts, newPost])
   }
 
+
   function handleUpdatePost(updatedPost){
     const updatedPosts = posts.map((post) => {
       if (post.id === updatedPost.id) {
@@ -59,7 +60,7 @@ function App() {
         <Route path='/profile' exact element={<Profile handleDeletePost={handleDeletePost} handleUpdatePost={handleUpdatePost} posts={posts} user={user}/>} />
         <Route path='/new-post' element={<CreatePost user={user} handleAddPost={handleAddPost}/>} />
         <Route path='/about' exact element={<About/>} />
-        <Route path='/posts/:id' element={<PostDetails handleDeletePost={handleDeletePost} handleUpdatePost={handleUpdatePost} user={user}/>} />
+        <Route path='/posts/:id' element={<PostDetails user={user} handleDeletePost={handleDeletePost} handleUpdatePost={handleUpdatePost} user={user}/>} />
       </Routes>
     </div>
   );

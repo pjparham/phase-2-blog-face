@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-function CreatePost({ handleAddPost }) {
+function CreatePost({ handleAddPost, user }) {
     const [title, setTitle] = useState("")
     const [subtitle, setSubtitle] = useState("")
     const [body, setBody] = useState("")
@@ -10,7 +10,8 @@ function CreatePost({ handleAddPost }) {
         const newPost = {
             "title": title,
             "subhead": subtitle,
-            "body": body
+            "body": body,
+            "user": user.sub
         }
         console.log(newPost)
         fetch('http://localhost:3004/posts', {

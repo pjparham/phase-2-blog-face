@@ -10,6 +10,37 @@ function NavBar({ setUser }){
         setUser(activeUser)
     }, [activeUser])
 
+    // function handleLogin(){
+    //     console.log('login')
+    //     loginWithRedirect()
+    //     setUser(user)
+    //     const newUser = {
+    //         "firstName": user.given_name,
+    //         "lastName": user.family_name,
+    //         "userId": user.sub,
+    //         "picture": null,
+    //         "email": user.email
+    //     }
+    //     let userIdArray = []
+    //     users.map((user) => { 
+    //         userIdArray.push(user.userId)
+    //     })
+    //     if (userIdArray.includes(user.sub)){ return null}
+    //     else{
+    //         fetch('http://localhost:3004/users', {
+    //             method: "POST",
+    //             headers: {
+    //                 "Content-Type": "application/json"
+    //             },
+    //             body: JSON.stringify(newUser)
+    //         })
+    //         .then((r) => r.json())
+    //         .then((newUser) => handleAddUser(newUser))
+    //     }
+    // }
+
+
+
     return(
         <>
             <Nav>
@@ -28,19 +59,11 @@ function NavBar({ setUser }){
                     <NavLink to="/new-post">
                         Create a Post
                     </NavLink></> : null}
-                    {/* <NavLink to="/profile">
-                        My Profile
-                    </NavLink>
-                    <NavLink to="/new-post">
-                        Create a Post
-                    </NavLink> */}
-                    {user ?   <NavBtnLink onClick={() => logout() }>Sign Out</NavBtnLink> : <NavBtnLink onClick={() => loginWithRedirect() }to='/sign-in'>Sign In</NavBtnLink>}
-                    {/* <NavBtnLink onClick={() => loginWithRedirect() }to='/sign-in'>Sign In</NavBtnLink>
-                    <NavBtnLink onClick={() => logout() }>Sign Out</NavBtnLink> */}
+                    {user ?  
+                        <NavBtnLink onClick={() => logout() }>Sign Out</NavBtnLink> : 
+                        <NavBtnLink onClick={() => loginWithRedirect() }to='/sign-in'>Sign In</NavBtnLink>
+                    }
                 </NavMenu>
-                {/* <NavBtn>
-                    <NavBtnLink to='/sign-in'>Sign In</NavBtnLink>
-                </NavBtn> */}
             </Nav>
         </>
     )

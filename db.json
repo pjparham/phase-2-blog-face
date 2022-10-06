@@ -4,25 +4,36 @@
       "id": 1,
       "title": "React 101",
       "subhead": "Some basics to get you started with React",
-      "body": "React apps are build using components. These components are used to give you flexibility when writing code."
+      "body": "React apps are build using components. These components are used to give you flexibility when writing code.",
+      "user": "test"
     },
     {
       "id": 2,
       "title": "Using JSX",
       "subhead": "JSX basics",
+      "user": "test",
       "body": "When writing your markup in react, you write it in JSX. This is very similar to HTML, but with some key differences. One difference to keep in mind is that JSX things expect a prop of className rather than class."
     },
     {
       "title": "Test post",
       "subhead": "this is a test post ",
+      "user": "test",
       "body": "Testing testing 1 2 3",
       "id": 3
     },
     {
       "title": "Hey Miguel",
       "subhead": "Miguel",
+      "user": "test",
       "body": "pollito",
       "id": 4
+    },
+    {
+      "title": "user post",
+      "subhead": "test",
+      "body": "hello",
+      "user": "google-oauth2|108105217762258962502",
+      "id": 5
     }
   ]
 }

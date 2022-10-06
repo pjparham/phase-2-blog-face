@@ -4,6 +4,7 @@ import BlogPosts from "./BlogPosts";
 import CreatePost from "./CreatePost";
 import About from "./About";
 import "../App.css";
+import Profile from "./Profile";
 import { Routes, Route } from 'react-router-dom';
 
 
@@ -18,12 +19,10 @@ function App() {
     .then((postData) => setPosts(postData))
   }, [])
 
+
   function handleAddPost(newPost){
     setPosts([...posts, newPost])
   }
-
-
-
 
   if (user === undefined){
     return (
@@ -41,10 +40,9 @@ function App() {
       <NavBar setUser={setUser}/>
       <Routes>
         <Route path='/' exact element={<BlogPosts posts={posts}/>} />
-        <Route path='/profile' exact element={<BlogPosts posts={posts}/>} />
-        <Route path='/new-post' element={<CreatePost handleAddPost={handleAddPost}/>} />
+        <Route path='/profile' exact element={<Profile posts={posts} user={user}/>} />
+        <Route path='/new-post' element={<CreatePost user={user} handleAddPost={handleAddPost}/>} />
         <Route path='/about' exact element={<About/>} />
-        <Route path='/sign-in' exact element={<BlogPosts posts={posts}/>} />
       </Routes>
     </div>
   );

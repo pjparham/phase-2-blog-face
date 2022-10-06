@@ -1,13 +1,13 @@
-import React, { useState } from "react";
-import { PostContainer, Title, EditButton, UserName, TitleContainer, ButtonContainer } from "./BlogPostElements";
+import React, { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
+import { PostContainer, Title, EditButton, UserName, TitleContainer, ButtonContainer } from "./PostDetailsElements";
 import EditPost from "../EditPost";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrash } from '@fortawesome/free-solid-svg-icons'
-import { Link } from 'react-router-dom'
 
-function BlogPost({ post, user, handleUpdatePost, handleDeletePost }){
+function PostDetails({ user, handleDeletePost, handleUpdatePost }) {
+    const [post, setPost] = useState(null)
     const [edit, setEdit] = useState(false)
-    const { title, body, subhead } = post
 
     function handleEditClick(){
         setEdit(!edit)
@@ -20,14 +20,22 @@ function BlogPost({ post, user, handleUpdatePost, handleDeletePost }){
           .then((r) => r.json())
           .then(() => handleDeletePost(post));
       }
- 
 
+    const params = useParams()
 
+    useEffect(() => {
+        fetch(`http://localhost:3004/posts/${params.id}`)
+        .then((r) => r.json())
+        .then((postData) => setPost(postData))
+    })
+
+    console.log(post, 'post details')
+    if (!post) return <h2>Loading...</h2>
     return (
         <PostContainer>
             <TitleContainer>
      
-             <Title>{title}</Title>
+             <Title>{post.title}</Title>
              {post.userName ? <UserName>By: {post.userName}</UserName> : null}
              {post.user === user.sub ? (<ButtonContainer>
                                             <EditButton onClick={handleDeleteClick}>
@@ -38,13 +46,12 @@ function BlogPost({ post, user, handleUpdatePost, handleDeletePost }){
                                             </EditButton>
                                         </ButtonContainer>) : null}
             </TitleContainer>
-            <h4>{subhead}</h4>
+            <h4>{post.subhead}</h4>
         
-            {/* <p>{body}</p> */}
-            <Link to={`/posts/${post.id}`}>See more</Link>
+            <p>{post.body}</p>
             { edit ? <EditPost setEdit={setEdit} handleUpdatePost={handleUpdatePost} post={post} /> : null}
         </PostContainer>
     )
 }
 
-export default BlogPost
+export default PostDetails

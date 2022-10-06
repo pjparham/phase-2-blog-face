@@ -5,6 +5,7 @@ import CreatePost from "./CreatePost";
 import About from "./About";
 import "../App.css";
 import Profile from "./Profile";
+import PostDetails from "./PostDetails";
 import { Routes, Route } from 'react-router-dom';
 
 
@@ -58,6 +59,7 @@ function App() {
         <Route path='/profile' exact element={<Profile handleDeletePost={handleDeletePost} handleUpdatePost={handleUpdatePost} posts={posts} user={user}/>} />
         <Route path='/new-post' element={<CreatePost user={user} handleAddPost={handleAddPost}/>} />
         <Route path='/about' exact element={<About/>} />
+        <Route path='/posts/:id' element={<PostDetails handleDeletePost={handleDeletePost} handleUpdatePost={handleUpdatePost} user={user}/>} />
       </Routes>
     </div>
   );

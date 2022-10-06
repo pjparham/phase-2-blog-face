@@ -10,36 +10,6 @@ function NavBar({ setUser }){
         setUser(activeUser)
     }, [activeUser])
 
-    // function handleLogin(){
-    //     console.log('login')
-    //     loginWithRedirect()
-    //     setUser(user)
-    //     const newUser = {
-    //         "firstName": user.given_name,
-    //         "lastName": user.family_name,
-    //         "userId": user.sub,
-    //         "picture": null,
-    //         "email": user.email
-    //     }
-    //     let userIdArray = []
-    //     users.map((user) => { 
-    //         userIdArray.push(user.userId)
-    //     })
-    //     if (userIdArray.includes(user.sub)){ return null}
-    //     else{
-    //         fetch('http://localhost:3004/users', {
-    //             method: "POST",
-    //             headers: {
-    //                 "Content-Type": "application/json"
-    //             },
-    //             body: JSON.stringify(newUser)
-    //         })
-    //         .then((r) => r.json())
-    //         .then((newUser) => handleAddUser(newUser))
-    //     }
-    // }
-
-
 
     return(
         <>

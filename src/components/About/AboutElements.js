@@ -9,6 +9,8 @@ export const AboutContainer = styled.div`
     line-height: 1.3;
     @media screen and (max-width: 768px) {
         width: 80%;
-        margin: 1rem;
+        margin-left: auto;
+        margin-right: auto;
+
     }
 `

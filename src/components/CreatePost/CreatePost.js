@@ -13,7 +13,8 @@ function CreatePost({ handleAddPost, user }) {
             "subhead": subtitle,
             "body": body,
             "user": user.sub,
-            "userName": (user.given_name + " " + user.family_name)
+            "userName": (user.given_name + " " + user.family_name),
+            "comments": []
         }
         console.log(newPost)
         fetch('http://localhost:3004/posts', {

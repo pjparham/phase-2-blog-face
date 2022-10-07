@@ -7,7 +7,7 @@ export const SidebarContainer = styled.aside`
     z-index: 999;
     width: 100%;
     height: 100%;
-    background: #0d0d0d;
+    background: #035394;
     display: grid;
     align-items: center;
     top: 0;
@@ -69,10 +69,11 @@ export const SideButtonWrap = styled.div`
 
 export const SidebarRoute = styled(Link)`
     border-radius: 50px;
-    background: #01bf71;
+    background: #fff;
+    font-weight: bold;
     white-space: nowrap;
     padding: 16px 64px;
-    color: #010606;
+    color: #035394;
     font-size: 16px;
     outline: none;
     border: none;

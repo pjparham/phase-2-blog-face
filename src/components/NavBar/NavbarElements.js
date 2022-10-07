@@ -32,6 +32,7 @@ export const NavLink = styled(Link)`
 export const Bars = styled(FaBars)`
     display: none;
     color: #0180e7;
+    margin-top: 1rem;
     @media screen and (max-width: 768px) {
         display: block;
         position: absolute;
@@ -83,6 +84,15 @@ export const NavBtnLink = styled(Link)`
         background: #fff;
         color: #0180e7;
         border: 1.5px solid black;
+    }
+`
+
+export const WebTitle = styled.img`
+    height: 15rem;
+    padding-bottom: 4rem;
+    @media screen and (max-width: 768px) {
+        height: 12rem;
+        margin-top: 1rem;
     }
 `
 

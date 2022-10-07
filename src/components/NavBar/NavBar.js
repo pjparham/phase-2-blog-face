@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import {Nav, NavLink, Bars, NavMenu, NavBtn, NavBtnLink} from './NavbarElements'
+import {Nav, NavLink, WebTitle, Bars, NavMenu, NavBtn, NavBtnLink} from './NavbarElements'
 import { useAuth0 } from '@auth0/auth0-react'
 
-function NavBar({ setUser }){
+function NavBar({ setUser, toggleSidebar }){
 
     const { loginWithRedirect, logout, user } = useAuth0();
     let activeUser = user
@@ -16,9 +16,9 @@ function NavBar({ setUser }){
             <Nav>
                 <NavLink className="home-button" to="/">
                     <img className="logo" src={require('../../images/blogface_logo.png')} alt='logo' />
-                    <img className="title" src={require('../../images/blogface_title.png')} alt='title' />
+                    <WebTitle className="title" src={require('../../images/blogface_title.png')} alt='title' />
                 </NavLink>
-                <Bars />
+                <Bars onClick={toggleSidebar}/>
                 <NavMenu>
                     <NavLink to="/about">
                         About

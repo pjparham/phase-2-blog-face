@@ -44,6 +44,10 @@
 .title {
   height: 15rem;
   padding-bottom: 4rem;
+  @media screen and (max-width: 768px) {
+    display: none;
+    height: 100px;
+}
 }
 
 /* .home-button {
@@ -52,6 +56,14 @@
 
 .body-input{
   resize: both;
+}
+.logoContainer{
+  margin-left: 40%;
+  margin-right: 40%;
+}
+.sidebarLogo{
+  height: 7rem;
+  display: block;
 }
 
 .about {

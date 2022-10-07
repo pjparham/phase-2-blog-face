@@ -96,41 +96,6 @@
       ]
     },
     {
-      "title": "Hey Miguel",
-      "subhead": "Miguel",
-      "user": "test",
-      "body": "pollito",
-      "id": 4,
-      "userName": "",
-      "comments": [
-        {
-          "id": 1,
-          "text": "this is really good",
-          "username": "John Doe"
-        },
-        {
-          "id": 2,
-          "text": "very helpful!",
-          "username": "John Doe"
-        },
-        {
-          "text": "yesss",
-          "id": 3,
-          "username": "Parker Parham"
-        },
-        {
-          "text": "slay",
-          "id": 4,
-          "username": "Parker Parham"
-        },
-        {
-          "text": "jkkj",
-          "id": 5,
-          "username": "Parker Parham"
-        }
-      ]
-    },
-    {
       "title": "Today is a great day",
       "subhead": "Reminder to be grateful",
       "body": "Be grateful in all things that you do. It is important to stay grateful always and be thankful for the blessings you do have. If you are able to sleep in a bed, go without hunger, and walk on both feet, you have abundance in your life that deserves gratitude.",
@@ -149,14 +114,6 @@
           "username": "John Doe"
         }
       ]
-    },
-    {
-      "title": "fjasdklf",
-      "subhead": "kljf;lk",
-      "body": "asdf",
-      "user": "auth0|633f83175615e6a1bdb51881",
-      "userName": "undefined undefined",
-      "id": 7
     }
   ]
 }

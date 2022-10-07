@@ -26,19 +26,18 @@ function BlogPost({ post, user, handleUpdatePost, handleDeletePost }){
             <TitleContainer>
      
              <Title>{title}</Title>
-             {post.userName ? <UserName>By: {post.userName}</UserName> : null}
+           
              {post.user === user.sub ? (<ButtonContainer>
                                             <EditButton onClick={handleDeleteClick}>
-                                                <FontAwesomeIcon icon={faTrash} /> 
+                                                 <FontAwesomeIcon icon={faTrash} /> 
                                             </EditButton>
                                             <EditButton onClick={handleEditClick}>
                                                 Edit
                                             </EditButton>
                                         </ButtonContainer>) : null}
             </TitleContainer>
+            {post.userName ? <UserName>By: {post.userName}</UserName> : null}
             <h4>{subhead}</h4>
-        
-            {/* <p>{body}</p> */}
             <Link to={`/posts/${post.id}`}>See more</Link>
             { edit ? <EditPost setEdit={setEdit} handleUpdatePost={handleUpdatePost} post={post} /> : null}
         </PostContainer>

@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { InputField, BodyInput, SubmitPost } from "./CreatePostElements"
 
 function CreatePost({ handleAddPost, user }) {
     const [title, setTitle] = useState("")
@@ -34,12 +35,12 @@ function CreatePost({ handleAddPost, user }) {
         <h1>New Post:</h1>
         <form onSubmit={handleSubmit}>
             <label for="title">Title</label><br></br>
-            <input value={title} onChange={(e)=>setTitle(e.target.value)} type="text" id="title" name="title"></input><br></br>
+            <InputField value={title} onChange={(e)=>setTitle(e.target.value)} type="text" id="title" name="title"></InputField><br></br>
             <label for="subtitle">Subtitle</label><br></br>
-            <input value={subtitle} onChange={(e)=>setSubtitle(e.target.value)} type="text" id="subtitle" name="subtitle"></input><br></br>
+            <InputField value={subtitle} onChange={(e)=>setSubtitle(e.target.value)} type="text" id="subtitle" name="subtitle"></InputField><br></br>
             <label for="body">Body</label><br></br>
-            <textarea value={body} onChange={(e)=>setBody(e.target.value)} className="body-input" type="textarea" id="body" name="body"></textarea><br></br>
-            <input type="submit" value="Submit"/>
+            <BodyInput value={body} onChange={(e)=>setBody(e.target.value)} className="body-input" type="textarea" id="body" name="body"></BodyInput><br></br>
+            <SubmitPost type="submit" value="Submit"/>
         </form>
     </div>
   )

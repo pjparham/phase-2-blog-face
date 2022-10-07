@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom'
 
 function BlogPost({ post, user, handleUpdatePost, handleDeletePost }){
     const [edit, setEdit] = useState(false)
-    const { title, body, subhead } = post
+    const { title, subhead } = post
 
     function handleEditClick(){
         setEdit(!edit)
@@ -20,8 +20,6 @@ function BlogPost({ post, user, handleUpdatePost, handleDeletePost }){
           .then((r) => r.json())
           .then(() => handleDeletePost(post));
       }
- 
-
 
     return (
         <PostContainer>

@@ -12,12 +12,6 @@ function Sidebar({isOpen, toggleSidebar, setUser}) {
         setUser(activeUser)
     }, [activeUser])
 
-    // <SidebarContainer>
-    //     <Icon>
-    //         <CloseIcon />
-    //     </Icon>
-    // </SidebarContainer>
-
   return (
     <SidebarContainer onClick={toggleSidebar} isOpen={isOpen}>
         <Icon onClick={toggleSidebar}> 
@@ -33,7 +27,10 @@ function Sidebar({isOpen, toggleSidebar, setUser}) {
                 <SidebarLink to="/new-post">Create a post</SidebarLink></> : null}
             </SidebarMenu>
             <SideButtonWrap>
-                {user ? <SidebarRoute onClick={() => logout()}>Sign Out</SidebarRoute> : <SidebarRoute onClick={() => loginWithRedirect()}>Sign In</SidebarRoute>}
+                {user ? 
+                    <SidebarRoute onClick={() => logout()}>Sign Out</SidebarRoute> 
+                    : <SidebarRoute onClick={() => loginWithRedirect()}>Sign In</SidebarRoute>
+                }
             </SideButtonWrap>
         </SidebarWrapper>
     </SidebarContainer>

@@ -20,18 +20,15 @@ function App() {
     setIsOpen(!isOpen)
   }
 
-
   useEffect(() => {
     fetch('http://localhost:3004/posts')
     .then((r) => r.json())
     .then((postData) => setPosts(postData))
   }, [])
 
-
   function handleAddPost(newPost){
     setPosts([...posts, newPost])
   }
-
 
   function handleUpdatePost(updatedPost){
     const updatedPosts = posts.map((post) => {
@@ -46,10 +43,6 @@ function App() {
     const updatedPosts = posts.filter((post) => post.id !== deletedPost.id);
     setPosts(updatedPosts)
   }
-  // if (user === undefined){
-  //   return (
-  //     <Sidebar />
-  //   )
 
   if (user === undefined){
     return (
@@ -68,11 +61,27 @@ function App() {
       <Sidebar isOpen={isOpen} setUser={setUser} toggleSidebar={toggleSidebar}/>
       <NavBar setUser={setUser} toggleSidebar={toggleSidebar}/>
       <Routes>
-        <Route path='/' exact element={<BlogPosts handleDeletePost={handleDeletePost} handleUpdatePost={handleUpdatePost} user={user} posts={posts}/>} />
-        <Route path='/profile' exact element={<Profile handleDeletePost={handleDeletePost} handleUpdatePost={handleUpdatePost} posts={posts} user={user}/>} />
-        <Route path='/new-post' element={<CreatePost user={user} handleAddPost={handleAddPost}/>} />
+        <Route path='/' exact element={<BlogPosts 
+                                          handleDeletePost={handleDeletePost} 
+                                          handleUpdatePost={handleUpdatePost} 
+                                          user={user} posts={posts}
+                                        />} />
+        <Route path='/profile' exact element={<Profile 
+                                                handleDeletePost={handleDeletePost} 
+                                                handleUpdatePost={handleUpdatePost} 
+                                                posts={posts} 
+                                                user={user}
+                                              />} />
+        <Route path='/new-post' element={<CreatePost 
+                                            user={user} 
+                                            handleAddPost={handleAddPost}
+                                            />} />
         <Route path='/about' exact element={<About/>} />
-        <Route path='/posts/:id' element={<PostDetails user={user} handleDeletePost={handleDeletePost} handleUpdatePost={handleUpdatePost} user={user}/>} />
+        <Route path='/posts/:id' element={<PostDetails 
+                                            user={user} 
+                                            handleDeletePost={handleDeletePost} 
+                                            handleUpdatePost={handleUpdatePost}
+                                          />} />
       </Routes>
     </div>
   );

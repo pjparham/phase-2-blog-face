@@ -1,11 +1,13 @@
-import React, { useEffect, useState } from "react";
-import {Nav, NavLink, WebTitle, Bars, NavMenu, NavBtn, NavBtnLink} from './NavbarElements'
+import React, { useEffect } from "react";
+import {Nav, NavLink, WebTitle, Bars, NavMenu, NavBtnLink} from './NavbarElements'
 import { useAuth0 } from '@auth0/auth0-react'
 
 function NavBar({ setUser, toggleSidebar }){
 
     const { loginWithRedirect, logout, user } = useAuth0();
+
     let activeUser = user
+    
     useEffect(() => {
         setUser(activeUser)
     }, [activeUser])

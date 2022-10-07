@@ -32,6 +32,16 @@
           "text": "123",
           "id": 5,
           "username": "Parker Parham"
+        },
+        {
+          "text": "Hello\n",
+          "id": 6,
+          "username": "undefined undefined"
+        },
+        {
+          "text": "Testing",
+          "id": 7,
+          "username": "Parker Parham"
         }
       ]
     },
@@ -57,6 +67,11 @@
           "text": "so good!",
           "id": 3,
           "username": "Parker Parham"
+        },
+        {
+          "text": "OMG I love it",
+          "id": 4,
+          "username": "undefined undefined"
         }
       ]
     },
@@ -96,7 +111,7 @@
       ]
     },
     {
-      "title": "Today is a great day",
+      "title": "Today is a great day!!",
       "subhead": "Reminder to be grateful",
       "body": "Be grateful in all things that you do. It is important to stay grateful always and be thankful for the blessings you do have. If you are able to sleep in a bed, go without hunger, and walk on both feet, you have abundance in your life that deserves gratitude.",
       "user": "google-oauth2|108105217762258962502",
@@ -114,14 +129,6 @@
           "username": "John Doe"
         }
       ]
-    },
-    {
-      "title": "asdf",
-      "subhead": "asdfasdf",
-      "body": "asdf",
-      "user": "google-oauth2|115273295061498231376",
-      "userName": "Parker Parham",
-      "id": 7
     },
     {
       "title": "afd",

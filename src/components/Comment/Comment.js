@@ -1,12 +1,13 @@
 import React from 'react'
+import { PostContainer, UserName } from "./CommentElements" 
 
 function Comment({ comment }) {
 
   return (
-    <div>
-        <p>By {comment.username}</p>
+    <PostContainer>
+        <UserName>By {comment.username}</UserName>
         <p>{comment.text}</p>
-    </div>
+    </PostContainer>
   )
 }
 

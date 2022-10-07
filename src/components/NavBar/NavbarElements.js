@@ -11,7 +11,7 @@ export const Nav = styled.nav`
     z-index: 10;   
     border: 3.5px solid #0180e7;
     border-radius: 20px;
-    width: 80%;
+    // width: 80%;
 `
 
 export const NavLink = styled(Link)`
@@ -69,7 +69,7 @@ export const NavBtnLink = styled(Link)`
     border-radius: 6px;
     background: #0180e7;
     padding: 10px 22px;
-    margin-right: 20px;
+    margin-right: 100px;
     color: #fff;
     border: none;
     outline: none;

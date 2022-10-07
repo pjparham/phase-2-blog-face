@@ -7,6 +7,7 @@ import "../App.css";
 import Profile from "./Profile";
 import PostDetails from "./PostDetails";
 import { Routes, Route } from 'react-router-dom';
+import Sidebar from "./Sidebar";
 
 
 
@@ -39,18 +40,21 @@ function App() {
     const updatedPosts = posts.filter((post) => post.id !== deletedPost.id);
     setPosts(updatedPosts)
   }
-
-
   if (user === undefined){
     return (
-      <div className="App">
-      <NavBar setUser={setUser}/>
-      <h1>Please login or create an account</h1>
-      <Routes>
-        <Route path='/about' element={<About/>}/>
-      </Routes>
-    </div>
+      <Sidebar />
     )
+
+  // if (user === undefined){
+  //   return (
+  //     <div className="App">
+  //     <NavBar setUser={setUser}/>
+  //     <h1>Please login or create an account</h1>
+  //     <Routes>
+  //       <Route path='/about' element={<About/>}/>
+  //     </Routes>
+  //   </div>
+  //   )
   }
   return (
     <div className="App">

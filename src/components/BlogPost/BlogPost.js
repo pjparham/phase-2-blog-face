@@ -68,7 +68,7 @@ function BlogPost({ post, user, handleUpdatePost, handleDeletePost }){
             </TitleContainer>
             {post.userName ? <UserName>By: {post.userName}</UserName> : null}
             <h4>{subhead}</h4>
-            <Link to={`/posts/${post.id}`}>See more</Link>
+            <Link className="pageLink" to={`/posts/${post.id}`}>See more</Link>
             <LikeButton onClick={handleLike}>
                 {post.likes.includes(user.sub) ?  <i className="fa-solid fa-heart"></i> :   <i className="fa-regular fa-heart"></i>}
             </LikeButton> {post.likes.length === 1 ? (post.likes.length) + " Like" : (post.likes.length) + " Likes"}

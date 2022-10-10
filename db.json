@@ -8,7 +8,8 @@
       "user": "test",
       "userName": "",
       "likes": [
-        "google-oauth2|108105217762258962502"
+        "google-oauth2|108105217762258962502",
+        "auth0|633f83175615e6a1bdb51881"
       ],
       "comments": [
         {
@@ -122,7 +123,9 @@
       "user": "google-oauth2|108105217762258962502",
       "id": 6,
       "userName": "Parker Parham",
-      "likes": [],
+      "likes": [
+        "auth0|633f83175615e6a1bdb51881"
+      ],
       "comments": [
         {
           "id": 1,
@@ -137,14 +140,16 @@
       ]
     },
     {
-      "title": "afd",
-      "subhead": "fdasf",
-      "body": "fdasfa",
-      "user": "google-oauth2|115273295061498231376",
+      "title": "Testing post",
+      "subhead": "This is a test post.",
+      "body": "Testing is an important part of web development. Web developers must test what they create so they can find bugs before users access their programs.",
+      "user": "google-oauth2|108105217762258962502",
       "userName": "Parker Parham",
       "comments": [],
-      "likes": [],
-      "id": 8
+      "likes": [
+        "google-oauth2|108105217762258962502"
+      ],
+      "id": 7
     }
   ]
 }

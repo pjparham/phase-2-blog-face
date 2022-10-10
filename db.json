@@ -7,7 +7,9 @@
       "body": "React apps are build using components. These components are used to give you flexibility when writing code.",
       "user": "test",
       "userName": "",
-      "likes": [],
+      "likes": [
+        "google-oauth2|108105217762258962502"
+      ],
       "comments": [
         {
           "id": 1,

@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom'
 import { PostContainer, Title, EditButton, UserName, TitleContainer, ButtonContainer } from "./PostDetailsElements";
 import EditPost from "../EditPost";
 import Comments from '../Comments';
+import Likes from '../Likes';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrash } from '@fortawesome/free-solid-svg-icons'
 
@@ -51,7 +52,8 @@ function PostDetails({ user, handleDeletePost, handleUpdatePost }) {
                 <h4>{post.subhead}</h4>
             
                 <p>{post.body}</p>
-                { edit ? <EditPost setEdit={setEdit} handleUpdatePost={handleUpdatePost} post={post} /> : null}
+                <Likes post={post} user={user} handleUpdatePost={setPost} />
+                { edit ? <EditPost setEdit={setEdit} handleUpdatePost={setPost} post={post} /> : null}
             </PostContainer>
             <Comments user={user} post={post}/>
 

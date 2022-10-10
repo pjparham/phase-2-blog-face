@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { PostContainer, Title, EditButton, UserName, TitleContainer, ButtonContainer, LikeButton } from "./BlogPostElements";
 import EditPost from "../EditPost";
+import Likes from "../Likes";
 import { Link } from 'react-router-dom'
 
 function BlogPost({ post, user, handleUpdatePost, handleDeletePost }){
@@ -20,41 +21,10 @@ function BlogPost({ post, user, handleUpdatePost, handleDeletePost }){
           .then(() => handleDeletePost(post));
       }
 
-
-      function handleLike(e){
-        e.preventDefault();
-        if (post.likes.includes(user.sub)){
-            const updatedLikes = post.likes.filter((like) => like !== user.sub)
-            const updatedLikeArray = { "likes": updatedLikes } 
-            fetch(`http://localhost:3004/posts/${post.id}`, {
-                method: "PATCH",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify(updatedLikeArray)
-            })
-            .then((r) => r.json())
-            .then((updatedPost) => handleUpdatePost(updatedPost))
-        }
-        else{
-            const updatedPost = {
-                "likes": [...post.likes, user.sub]
-            }
-            fetch(`http://localhost:3004/posts/${post.id}`, {
-                method: "PATCH",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify(updatedPost)
-            })
-            .then((r) => r.json())
-            .then((updatedPost) => handleUpdatePost(updatedPost))
-        }
-    }
-
     return (
         <PostContainer>
             <TitleContainer>
+         
              <Title>{title}</Title>
            
              {post.user === user.sub ? (<ButtonContainer>
@@ -69,12 +39,12 @@ function BlogPost({ post, user, handleUpdatePost, handleDeletePost }){
             {post.userName ? <UserName>By: {post.userName}</UserName> : null}
             <h4>{subhead}</h4>
             <Link className="pageLink" to={`/posts/${post.id}`}>See more</Link>
-            <LikeButton onClick={handleLike}>
-                {post.likes.includes(user.sub) ?  <i className="fa-solid fa-heart"></i> :   <i className="fa-regular fa-heart"></i>}
-            </LikeButton> {post.likes.length === 1 ? (post.likes.length) + " Like" : (post.likes.length) + " Likes"}
+            <Likes user={user} post={post} handleUpdatePost={handleUpdatePost} />
             { edit ? <EditPost setEdit={setEdit} handleUpdatePost={handleUpdatePost} post={post} /> : null}
         </PostContainer>
     )
 }
 
 export default BlogPost
+
+

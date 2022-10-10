@@ -1,8 +1,6 @@
 import React, { useState } from "react";
-import { PostContainer, Title, EditButton, UserName, TitleContainer, ButtonContainer } from "./BlogPostElements";
+import { PostContainer, Title, EditButton, UserName, TitleContainer, ButtonContainer, LikeButton } from "./BlogPostElements";
 import EditPost from "../EditPost";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTrash, faHeart } from '@fortawesome/free-solid-svg-icons'
 import { Link } from 'react-router-dom'
 
 function BlogPost({ post, user, handleUpdatePost, handleDeletePost }){
@@ -71,9 +69,9 @@ function BlogPost({ post, user, handleUpdatePost, handleDeletePost }){
             {post.userName ? <UserName>By: {post.userName}</UserName> : null}
             <h4>{subhead}</h4>
             <Link to={`/posts/${post.id}`}>See more</Link>
-            <button onClick={handleLike}>
+            <LikeButton onClick={handleLike}>
                 {post.likes.includes(user.sub) ?  <i className="fa-solid fa-heart"></i> :   <i className="fa-regular fa-heart"></i>}
-            </button> {post.likes.length === 1 ? (post.likes.length) + " Like" : (post.likes.length) + " Likes"}
+            </LikeButton> {post.likes.length === 1 ? (post.likes.length) + " Like" : (post.likes.length) + " Likes"}
             { edit ? <EditPost setEdit={setEdit} handleUpdatePost={handleUpdatePost} post={post} /> : null}
         </PostContainer>
     )

@@ -28,23 +28,18 @@
           "username": "Parker Parham"
         },
         {
-          "text": "Testing testing",
-          "id": 4,
-          "username": "Parker Parham"
-        },
-        {
-          "text": "123",
-          "id": 5,
-          "username": "Parker Parham"
-        },
-        {
-          "text": "Hello\n",
-          "id": 6,
-          "username": "undefined undefined"
-        },
-        {
           "text": "Testing",
           "id": 7,
+          "username": "Parker Parham"
+        },
+        {
+          "text": "Nice!",
+          "id": 8,
+          "username": "Parker Parham"
+        },
+        {
+          "text": "Very good.",
+          "id": 9,
           "username": "Parker Parham"
         }
       ]

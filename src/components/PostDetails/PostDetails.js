@@ -29,7 +29,7 @@ function PostDetails({ user, handleDeletePost, handleUpdatePost }) {
         fetch(`http://localhost:3004/posts/${params.id}`)
         .then((r) => r.json())
         .then((postData) => setPost(postData))
-    }, [post])
+    }, [])
 
     if (!post) return <h2>Your post was deleted. Please return to the home page by clicking the logo.</h2>
     return (

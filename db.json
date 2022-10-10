@@ -7,6 +7,7 @@
       "body": "React apps are build using components. These components are used to give you flexibility when writing code.",
       "user": "test",
       "userName": "",
+      "likes": [],
       "comments": [
         {
           "id": 1,
@@ -52,6 +53,7 @@
       "user": "test",
       "body": "When writing your markup in react, you write it in JSX. This is very similar to HTML, but with some key differences. One difference to keep in mind is that JSX things expect a prop of className rather than class.",
       "userName": "",
+      "likes": [],
       "comments": [
         {
           "id": 1,
@@ -82,6 +84,7 @@
       "body": "Testing testing 1 2 3",
       "id": 3,
       "userName": "",
+      "likes": [],
       "comments": [
         {
           "id": 1,
@@ -117,6 +120,7 @@
       "user": "google-oauth2|108105217762258962502",
       "id": 6,
       "userName": "Parker Parham",
+      "likes": [],
       "comments": [
         {
           "id": 1,
@@ -137,6 +141,7 @@
       "user": "google-oauth2|115273295061498231376",
       "userName": "Parker Parham",
       "comments": [],
+      "likes": [],
       "id": 8
     }
   ]

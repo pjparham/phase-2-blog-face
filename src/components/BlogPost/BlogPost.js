@@ -13,6 +13,7 @@ function BlogPost({ post, user, handleUpdatePost, handleDeletePost }){
         setEdit(!edit)
     }
 
+
     function handleDeleteClick(){
         fetch(`http://localhost:3004/posts/${post.id}`, {
           method: "DELETE",

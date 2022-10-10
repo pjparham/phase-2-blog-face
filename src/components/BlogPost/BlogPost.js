@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { PostContainer, Title, EditButton, UserName, TitleContainer, ButtonContainer } from "./BlogPostElements";
 import EditPost from "../EditPost";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTrash } from '@fortawesome/free-solid-svg-icons'
+import { faTrash, faHeart } from '@fortawesome/free-solid-svg-icons'
 import { Link } from 'react-router-dom'
 
 function BlogPost({ post, user, handleUpdatePost, handleDeletePost }){
@@ -27,7 +27,17 @@ function BlogPost({ post, user, handleUpdatePost, handleDeletePost }){
       function handleLike(e){
         e.preventDefault();
         if (post.likes.includes(user.sub)){
-            return null
+            const updatedLikes = post.likes.filter((like) => like !== user.sub)
+            const updatedLikeArray = { "likes": updatedLikes } 
+            fetch(`http://localhost:3004/posts/${post.id}`, {
+                method: "PATCH",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(updatedLikeArray)
+            })
+            .then((r) => r.json())
+            .then((updatedPost) => handleUpdatePost(updatedPost))
         }
         else{
             const updatedPost = {
@@ -48,12 +58,13 @@ function BlogPost({ post, user, handleUpdatePost, handleDeletePost }){
     return (
         <PostContainer>
             <TitleContainer>
-     
+            {/* <FontAwesomeIcon icon="fa-solid fa-heart" />  */}
+            {/* <FontAwesomeIcon icon={faHeart} className="fa-light" />  */}
              <Title>{title}</Title>
            
              {post.user === user.sub ? (<ButtonContainer>
                                             <EditButton onClick={handleDeleteClick}>
-                                                 <FontAwesomeIcon icon={faTrash} /> 
+                                                 <i class="fa-solid fa-trash"></i>
                                             </EditButton>
                                             <EditButton onClick={handleEditClick}>
                                                 Edit
@@ -63,7 +74,7 @@ function BlogPost({ post, user, handleUpdatePost, handleDeletePost }){
             {post.userName ? <UserName>By: {post.userName}</UserName> : null}
             <h4>{subhead}</h4>
             <Link to={`/posts/${post.id}`}>See more</Link>
-            <button onClick={handleLike}>{post.likes? (post.likes.length) + "Likes" : "Like"}</button>
+            <button onClick={handleLike}>{post.likes.includes(user.sub) ?  <i class="fa-solid fa-heart"></i> :   <i class="fa-regular fa-heart"></i>}</button>{post.likes? (post.likes.length) + "Likes" : "Like"}
             { edit ? <EditPost setEdit={setEdit} handleUpdatePost={handleUpdatePost} post={post} /> : null}
         </PostContainer>
     )

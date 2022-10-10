@@ -22,7 +22,6 @@ function BlogPost({ post, user, handleUpdatePost, handleDeletePost }){
           .then(() => handleDeletePost(post));
       }
 
-      console.log(user.sub)
 
       function handleLike(e){
         e.preventDefault();
@@ -58,13 +57,11 @@ function BlogPost({ post, user, handleUpdatePost, handleDeletePost }){
     return (
         <PostContainer>
             <TitleContainer>
-            {/* <FontAwesomeIcon icon="fa-solid fa-heart" />  */}
-            {/* <FontAwesomeIcon icon={faHeart} className="fa-light" />  */}
              <Title>{title}</Title>
            
              {post.user === user.sub ? (<ButtonContainer>
                                             <EditButton onClick={handleDeleteClick}>
-                                                 <i class="fa-solid fa-trash"></i>
+                                                 <i className="fa-solid fa-trash"></i>
                                             </EditButton>
                                             <EditButton onClick={handleEditClick}>
                                                 Edit
@@ -74,7 +71,9 @@ function BlogPost({ post, user, handleUpdatePost, handleDeletePost }){
             {post.userName ? <UserName>By: {post.userName}</UserName> : null}
             <h4>{subhead}</h4>
             <Link to={`/posts/${post.id}`}>See more</Link>
-            <button onClick={handleLike}>{post.likes.includes(user.sub) ?  <i class="fa-solid fa-heart"></i> :   <i class="fa-regular fa-heart"></i>}</button>{post.likes? (post.likes.length) + "Likes" : "Like"}
+            <button onClick={handleLike}>
+                {post.likes.includes(user.sub) ?  <i className="fa-solid fa-heart"></i> :   <i className="fa-regular fa-heart"></i>}
+            </button> {post.likes.length === 1 ? (post.likes.length) + " Like" : (post.likes.length) + " Likes"}
             { edit ? <EditPost setEdit={setEdit} handleUpdatePost={handleUpdatePost} post={post} /> : null}
         </PostContainer>
     )

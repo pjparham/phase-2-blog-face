@@ -17,7 +17,7 @@ function Sidebar({isOpen, toggleSidebar, setUser}) {
         <Icon onClick={toggleSidebar}> 
             <CloseIcon />
         </Icon>
-        <div class="logoContainer">
+        <div className="logoContainer">
             <img className="sidebarLogo" src={require('../../images/blogface_logo.png')} alt='logo' />
         </div>
         <SidebarWrapper>

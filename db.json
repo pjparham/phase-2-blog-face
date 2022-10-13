@@ -8,7 +8,9 @@
       "user": "test",
       "userName": "",
       "likes": [
-        "auth0|633f83175615e6a1bdb51881"
+        "auth0|633f83175615e6a1bdb51881",
+        "google-oauth2|109716251858905425458",
+        "google-oauth2|108105217762258962502"
       ],
       "comments": [
         {
@@ -38,6 +40,21 @@
         },
         {
           "text": "Very good.",
+          "id": 9,
+          "username": "Parker Parham"
+        },
+        {
+          "text": "!",
+          "id": 7,
+          "username": "Parker Parham"
+        },
+        {
+          "text": "Good!",
+          "id": 8,
+          "username": "Parker Parham"
+        },
+        {
+          "text": "Yes!",
           "id": 9,
           "username": "Parker Parham"
         }
@@ -81,7 +98,10 @@
       "body": "Testing testing 1 2 3",
       "id": 3,
       "userName": "",
-      "likes": [],
+      "likes": [
+        "google-oauth2|108105217762258962502",
+        "auth0|633f83175615e6a1bdb51881"
+      ],
       "comments": [
         {
           "id": 1,
@@ -139,11 +159,42 @@
       "body": "Testing is an important part of web development. Web developers must test what they create so they can find bugs before users access their programs.",
       "user": "google-oauth2|108105217762258962502",
       "userName": "Parker Parham",
+      "comments": [
+        {
+          "text": "Hello",
+          "id": 1,
+          "username": "Parker Parham"
+        },
+        {
+          "text": "Testing",
+          "id": 2,
+          "username": "Parker Parham"
+        }
+      ],
+      "likes": [],
+      "id": 7
+    },
+    {
+      "title": "Something you need to know about React",
+      "subhead": "React is popular for a reason",
+      "body": "React allows you to build out SAPs with the help of reusable components. The modular nature of these components help you dynamically reuse parts of your code. In React components, you can write in JSX. It is not HTML, but it uses a similar syntax. You are also able to use the power of JavaScript is this 'not HTML' language, allowing endless possibilities.",
+      "user": "google-oauth2|109716251858905425458",
+      "userName": "Jane Doe",
       "comments": [],
       "likes": [
-        "google-oauth2|108105217762258962502"
+        "google-oauth2|109716251858905425458"
       ],
-      "id": 7
+      "id": 9
+    },
+    {
+      "title": "hey",
+      "subtitle": "hi",
+      "body": "hello",
+      "user": "google-oauth2|109716251858905425458",
+      "userName": "Jane Doe",
+      "comments": [],
+      "likes": [],
+      "id": 10
     }
   ]
 }

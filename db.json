@@ -3,7 +3,7 @@
     {
       "id": 1,
       "title": "React 101",
-      "subhead": "Some basics to get you started with React",
+      "subtitle": "Some basics to get you started with React",
       "body": "React apps are build using components. These components are used to give you flexibility when writing code.",
       "user": "test",
       "userName": "",
@@ -57,13 +57,23 @@
           "text": "Yes!",
           "id": 9,
           "username": "Parker Parham"
+        },
+        {
+          "text": "This great.",
+          "id": 10,
+          "username": "Parker Parham"
+        },
+        {
+          "text": "I love this.",
+          "id": 11,
+          "username": "Parker Parham"
         }
       ]
     },
     {
       "id": 2,
       "title": "Using JSX",
-      "subhead": "JSX basics",
+      "subtitle": "JSX basics",
       "user": "test",
       "body": "When writing your markup in react, you write it in JSX. This is very similar to HTML, but with some key differences. One difference to keep in mind is that JSX things expect a prop of className rather than class.",
       "userName": "",
@@ -93,7 +103,7 @@
     },
     {
       "title": "Test post",
-      "subhead": "this is a test post ",
+      "subtitle": "this is a test post ",
       "user": "test",
       "body": "Testing testing 1 2 3",
       "id": 3,
@@ -132,7 +142,7 @@
     },
     {
       "title": "Today is a great day",
-      "subhead": "Reminder to be grateful",
+      "subtitle": "Reminder to be grateful",
       "body": "Be grateful in all things that you do. It is important to stay grateful always and be thankful for the blessings you do have. If you are able to sleep in a bed, go without hunger, and walk on both feet, you have abundance in your life that deserves gratitude.",
       "user": "google-oauth2|108105217762258962502",
       "id": 6,
@@ -150,12 +160,17 @@
           "id": 2,
           "text": "very helpful!",
           "username": "John Doe"
+        },
+        {
+          "text": "So true",
+          "id": 3,
+          "username": "Miguel Tapia"
         }
       ]
     },
     {
       "title": "Testing post!",
-      "subhead": "This is a test post.",
+      "subtitle": "This is a test post.",
       "body": "Testing is an important part of web development. Web developers must test what they create so they can find bugs before users access their programs.",
       "user": "google-oauth2|108105217762258962502",
       "userName": "Parker Parham",
@@ -176,7 +191,7 @@
     },
     {
       "title": "Something you need to know about React",
-      "subhead": "React is popular for a reason",
+      "subtitle": "React is popular for a reason",
       "body": "React allows you to build out SAPs with the help of reusable components. The modular nature of these components help you dynamically reuse parts of your code. In React components, you can write in JSX. It is not HTML, but it uses a similar syntax. You are also able to use the power of JavaScript is this 'not HTML' language, allowing endless possibilities.",
       "user": "google-oauth2|109716251858905425458",
       "userName": "Jane Doe",
@@ -187,13 +202,15 @@
       "id": 9
     },
     {
-      "title": "hey",
+      "title": "hey!",
       "subtitle": "hi",
       "body": "hello",
       "user": "google-oauth2|109716251858905425458",
       "userName": "Jane Doe",
       "comments": [],
-      "likes": [],
+      "likes": [
+        "google-oauth2|115727095446560881636"
+      ],
       "id": 10
     }
   ]

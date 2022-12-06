@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 function EditPost({  user, post, handleUpdatePost, setEdit }) {
     const [title, setTitle] = useState(post.title)
-    const [subtitle, setSubtitle] = useState(post.subhead)
+    const [subtitle, setSubtitle] = useState(post.subtitle)
     const [body, setBody] = useState(post.body)
 
     function handleSubmit(e){

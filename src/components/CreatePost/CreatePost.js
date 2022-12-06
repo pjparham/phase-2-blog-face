@@ -21,7 +21,7 @@ function CreatePost({ handleAddPost, user }) {
             [e.target.name]: e.target.value,
         })
     }
-
+console.log(newPost)
 
 
    function handleSubmit(e){
@@ -53,6 +53,7 @@ function CreatePost({ handleAddPost, user }) {
             "subtitle": "",
             "body": ""
         })
+        console.log(newPost)
         alert('Your post was submitted. Check out the home page to see it!')
    }
   return (

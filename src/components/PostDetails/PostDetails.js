@@ -14,7 +14,7 @@ function PostDetails({ user, handleDeletePost, handleUpdatePost }) {
     function handleEditClick(){
         setEdit(!edit)
     }
-
+    console.log(post)
     function handleDeleteClick(){
         fetch(`http://localhost:3004/posts/${post.id}`, {
           method: "DELETE",
@@ -49,7 +49,7 @@ function PostDetails({ user, handleDeletePost, handleUpdatePost }) {
                                                 </EditButton>
                                             </ButtonContainer>) : null}
                 </TitleContainer>
-                <h4>{post.subhead}</h4>
+                <h4>{post.subtitle}</h4>
             
                 <p>{post.body}</p>
                 <Likes post={post} user={user} handleUpdatePost={setPost} />

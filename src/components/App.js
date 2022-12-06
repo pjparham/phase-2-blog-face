@@ -20,6 +20,7 @@ function App() {
   function toggleSidebar(){
     setIsOpen(!isOpen)
   }
+  console.log(posts)
 
   useEffect(() => {
     fetch('http://localhost:3004/posts')
@@ -40,9 +41,6 @@ function App() {
     setPosts(updatedPosts)
   }
 
-  //create input field -> controlled 
-  //use value of form to filter blog posts
-  //pass filtered blog posts 
 
   let filteredBlogPosts = posts.filter((post) => (post.title.toLowerCase().includes(search.toLowerCase())))
 

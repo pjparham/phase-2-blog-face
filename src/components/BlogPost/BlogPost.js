@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 
 function BlogPost({ post, user, handleUpdatePost, handleDeletePost }){
     const [edit, setEdit] = useState(false)
-    const { title, subhead } = post
+    const { title, subtitle } = post
 
     function handleEditClick(){
         setEdit(!edit)
@@ -37,7 +37,7 @@ function BlogPost({ post, user, handleUpdatePost, handleDeletePost }){
                                         </ButtonContainer>) : null}
             </TitleContainer>
             {post.userName ? <UserName>By: {post.userName}</UserName> : null}
-            <h4>{subhead}</h4>
+            <h4>{subtitle}</h4>
             <Link className="pageLink" to={`/posts/${post.id}`}>See more</Link>
             <Likes user={user} post={post} handleUpdatePost={handleUpdatePost} />
             { edit ? <EditPost setEdit={setEdit} handleUpdatePost={handleUpdatePost} post={post} /> : null}
